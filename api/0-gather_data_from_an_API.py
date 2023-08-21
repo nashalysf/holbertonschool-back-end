@@ -20,10 +20,11 @@ EMPLOYEE_NAME = user_url.get('name')
 todos = user_url.get('https://jsonplaceholder.typicode.com/todos/').json
 
 for i in todos:
-    if i.get('completed') is True:
-        TASK_TITLE.append(i['title'])
-        NUMBER_OF_DONE_TASKS += 1
-    TOTAL_NUMBER_OF_TASKS += 1
+    if i.get('userId') == int(id):
+        if i.get('completed') is True:
+            TASK_TITLE.append(i['title'])
+            NUMBER_OF_DONE_TASKS += 1
+        TOTAL_NUMBER_OF_TASKS += 1
 
 
 print('Employee {} is done with tasks({:d}/{:d}):'.format(EMPLOYEE_NAME,
