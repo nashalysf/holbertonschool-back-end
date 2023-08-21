@@ -8,12 +8,13 @@ import sys
 
 if __name__ == "__main__":
     """ Gets employee todo information """
-    id = sys.argv[2]
+    id = sys.argv[1]
     TASK_TITLE = []
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
 
-user_url = requests.get('https://jsonplaceholder.typicode.com/users/' + id)
+user_url = requests.get(
+    'https://jsonplaceholder.typicode.com/users/' + id).json
 EMPLOYEE_NAME = user_url.get('name')
 todos = user_url.get('https://jsonplaceholder.typicode.com/todos/').json
 
