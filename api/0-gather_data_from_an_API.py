@@ -14,9 +14,9 @@ if __name__ == "__main__":
     TOTAL_NUMBER_OF_TASKS = 0
 
 user_url = requests.get(
-    'https://jsonplaceholder.typicode.com/users/' + id).json
+    'https://jsonplaceholder.typicode.com/users/' + id).json()
 EMPLOYEE_NAME = user_url.get('name')
-todos = user_url.get('https://jsonplaceholder.typicode.com/todos/').json
+todos = requests.get('https://jsonplaceholder.typicode.com/todos/').json()
 
 for i in todos:
     if i.get('userId') == int(id):
