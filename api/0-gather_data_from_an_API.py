@@ -10,7 +10,7 @@ import sys
 
 if __name__ == "__main__":
     """ Gets employee todo information """
-    id = sys.argv[1]
+    id = sys.argv[2]
     TASK_TITLE = []
     NUMBER_OF_DONE_TASKS = 0
     TOTAL_NUMBER_OF_TASKS = 0
