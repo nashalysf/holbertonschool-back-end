@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     for user in user_url:
         tasks = requests.get(
-            f"https://jsonplaceholder.typicode.com/users/{user['id']}/todos").json()
+            f"{user_url}/{user['id']}/todos").json()
 
     users_tasks[user['id']] = []
     for task in tasks:
