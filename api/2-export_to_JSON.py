@@ -13,9 +13,9 @@ if __name__ == "__main__":
 
 
 user_url = requests.get(
-    'https://jsonplaceholder.typicode.com/' + 'users/' + id).json()
+    'https://jsonplaceholder.typicode.com/users/' + id).json()
 todos = requests.get(
-    'https://jsonplaceholder.typicode.com/' + 'todos?userId=' + id).json()
+    'https://jsonplaceholder.typicode.com/todos?userId=' + id).json()
 
 for task in todos:
     task_data = {
