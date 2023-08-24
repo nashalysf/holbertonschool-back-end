@@ -16,17 +16,14 @@ if __name__ == "__main__":
         tasks = requests.get(
             f"{user_url}/{user['id']}/todos").json()
 
-    for user in user_url:
-        user_id = user['id']
-        username = user[username]
-        users_tasks[user_id] = []
-        for todo in tasks:
-            if user_id == todo["userId"]:
-                users_tasks[user_id].append({
-                    "username": username,
-                    "task": todo["title"],
-                    "completed": todo["completed"]
-                })
+    users_tasks[user['id']] = []
+    for task in tasks:
+        tasks_dict = {
+            'username': user['username'],
+            'task': task['title'],
+            'completed': task['completed']
+        }
+        users_tasks[user['id']].append(tasks_dict)
 
     with open('todo_all_employees.json', 'w') as f:
         json.dump(users_tasks, f)
